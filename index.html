@@ -19,9 +19,7 @@
             <nav>
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre">Sobre</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#subir">Subir Trabajo</a>
-                <a href="#comentarios">Comentarios</a>
+                <a href="#proyectos">Pdf´S</a>
             </nav>
         </div>
     </header>
@@ -32,8 +30,6 @@
         <h1>Diseñamos espacios que respetan y regeneran el planeta</h1>
         <p>Comparte tus proyectos, recibe retroalimentación de la comunidad y contribuye a un hábitat más sostenible. Un espacio colaborativo impulsado por el Instituto de Arquitectura y Ciudad Sostenibles.</p>
         <div class="hero-buttons">
-            <a href="#subir" class="btn btn-primary">Subir un trabajo</a>
-            <a href="#proyectos" class="btn btn-outline">Explorar proyectos</a>
         </div>
     </section>
 
@@ -57,126 +53,19 @@
                 </p>
             </div>
             <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Premios nacionales</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Años de experiencia</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Proyectos realizados</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Países con colaboración</div>
-                </div>
+            
             </div>
         </div>
     </section>
 
     <!-- ========== PROYECTOS ========== -->
     <section id="proyectos" class="fade-in">
-        <h2 class="section-title">Proyectos de la Comunidad</h2>
-        <p class="section-subtitle">Trabajos destacados en arquitectura bioclimática, vivienda sustentable e investigación aplicada.</p>
-        <div class="projects-grid" id="projectsGrid">
-            <!-- Los proyectos se cargan dinámicamente con JS -->
-        </div>
+        <h2 class="section-title">Proyectos y portafolio</h2>
+        <p class="section-subtitle">Explora los proyectos y consulta el portafolio completo en PDF.</p>
+        <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <!-- ========== SUBIR TRABAJO ========== -->
-    <section id="subir" class="fade-in">
-        <div class="upload-section">
-            <h2>Sube tu Trabajo</h2>
-            <p>Comparte tu proyecto de arquitectura bioclimática con la comunidad. Aceptamos planos, memorias descriptivas, imágenes y documentos PDF.</p>
-            <form id="uploadForm">
-                <div class="form-group">
-                    <label for="titulo">Título del proyecto *</label>
-                    <input type="text" id="titulo" placeholder="Ej: Vivienda bioclimática en clima cálido-húmedo" required>
-                </div>
-                <div class="form-group">
-                    <label for="autor">Nombre del autor *</label>
-                    <input type="text" id="autor" placeholder="Tu nombre o estudio" required>
-                </div>
-                <div class="form-group">
-                    <label for="categoria">Categoría *</label>
-                    <select id="categoria" required>
-                        <option value="">Seleccionar...</option>
-                        <option value="vivienda">Vivienda sustentable</option>
-                        <option value="educativo">Equipamiento educativo</option>
-                        <option value="urbano">Diseño urbano</option>
-                        <option value="investigacion">Investigación</option>
-                        <option value="materiales">Materiales y técnicas</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción breve *</label>
-                    <textarea id="descripcion" placeholder="Explica las estrategias bioclimáticas utilizadas, el contexto climático y los resultados obtenidos..." required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Archivo del proyecto</label>
-                    <div class="file-upload" onclick="document.getElementById('fileInput').click()">
-                        <div class="file-upload-icon">📎</div>
-                        <p>Haz clic para subir o arrastra tu archivo aquí</p>
-                        <p style="font-size: 0.8rem; margin-top: 0.3rem;">PDF, JPG, PNG · Máx. 20 MB</p>
-                        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
-                    </div>
-                    <p id="fileName" style="font-size: 0.85rem; color: var(--verde-medio); margin-top: 0.5rem;"></p>
-                </div>
-                <button type="submit" class="btn-submit">Publicar trabajo</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ========== COMENTARIOS Y PUNTUACIÓN ========== -->
-    <section id="comentarios" class="fade-in">
-        <div class="interaction-section">
-            <h2>Comenta y Puntúa</h2>
-            <p>Tu opinión ayuda a mejorar los proyectos de la comunidad. Puntúa el trabajo que acabas de ver y deja tus comentarios.</p>
-
-            <!-- Puntuación -->
-            <div class="rating-display">
-                <span class="rating-label">Puntuación:</span>
-                <div class="rating-stars" id="ratingStars">
-                    <span data-value="1" title="Muy deficiente">★</span>
-                    <span data-value="2" title="Deficiente">★</span>
-                    <span data-value="3" title="Aceptable">★</span>
-                    <span data-value="4" title="Bueno">★</span>
-                    <span data-value="5" title="Excelente">★</span>
-                </div>
-                <span class="rating-value" id="ratingValue">0.0</span>
-                <span style="font-size: 0.85rem; color: #9a9a9a;">(0 votos)</span>
-            </div>
-
-            <!-- Comentarios -->
-            <div class="comment-list" id="commentList">
-                <!-- Comentarios precargados -->
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-author">María González</span>
-                        <span class="comment-date">Hace 2 días</span>
-                    </div>
-                    <p class="comment-text">Excelente trabajo. La integración de la ventilación cruzada con los patios interiores es muy acertada para el clima cálido-subhúmedo.</p>
-                </div>
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-author">Carlos Mendoza</span>
-                        <span class="comment-date">Hace 5 días</span>
-                    </div>
-                    <p class="comment-text">Muy buena documentación. Sería interesante ver más detalles sobre el comportamiento térmico en verano. ¡Felicidades!</p>
-                </div>
-            </div>
-
-            <!-- Formulario de comentario -->
-            <form class="comment-form" id="commentForm">
-                <input type="text" id="commentName" placeholder="Tu nombre" required>
-                <input type="text" id="commentText" placeholder="Escribe un comentario..." required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+    
 
     <!-- ========== FOOTER ========== -->
     <footer>
@@ -192,6 +81,6 @@
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->
-     <script src="src/JABA.js"> </script>
+    <script src="src/JABA.js"> </script>
 </body>
 </html>
