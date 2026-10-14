@@ -199,11 +199,22 @@
         }
 
         /* === SOBRE NOSOTROS === */
+        #sobre .section-title,
+        #sobre .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: center;
         }
 
         .about-text p {
@@ -217,9 +228,9 @@
 
         .about-highlight {
             background: var(--blanco);
-            border-left: 4px solid var(--verde-medio);
+            border-top: 4px solid var(--verde-medio);
             padding: 1.5rem;
-            border-radius: 0 var(--radio) var(--radio) 0;
+            border-radius: var(--radio);
             margin: 1.5rem 0;
             box-shadow: var(--sombra);
         }
@@ -264,8 +275,16 @@
         /* === PROYECTOS === */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 380px));
             gap: 1.5rem;
+            justify-content: center;
+        }
+
+        #proyectos .section-title,
+        #proyectos .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
         .project-card {
@@ -310,6 +329,7 @@
 
         .project-body {
             padding: 1.5rem;
+            text-align: center;
         }
 
         .project-category {
@@ -659,7 +679,8 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 380px));
+                justify-content: center;
             }
 
             .upload-section,
